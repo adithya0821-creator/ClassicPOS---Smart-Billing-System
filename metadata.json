@@ -1,0 +1,5 @@
+{
+  "name": "ClassicPOS - Smart Billing System",
+  "description": "A modern Point of Sale system with automated cost calculation and UPI payment integration.",
+  "requestFramePermissions": []
+}
