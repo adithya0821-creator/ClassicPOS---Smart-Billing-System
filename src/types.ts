@@ -2,7 +2,6 @@ export interface Customer {
   id: string;
   name: string;
   phone: string;
-  email?: string;
   address?: string;
 }
 
@@ -11,6 +10,7 @@ export interface Product {
   name: string;
   unitPrice: number;
   category: string;
+  stock: number;
 }
 
 export interface BillItem {

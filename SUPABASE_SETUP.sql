@@ -8,12 +8,17 @@ CREATE TABLE products (
   category TEXT
 );
 
--- 2. Create Customers Table
+-- 2. Create Categories Table
+CREATE TABLE categories (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL UNIQUE
+);
+
+-- 3. Create Customers Table
 CREATE TABLE customers (
   id TEXT PRIMARY KEY,
   name TEXT NOT NULL,
   phone TEXT NOT NULL UNIQUE,
-  email TEXT,
   address TEXT
 );
 
@@ -42,10 +47,22 @@ CREATE TABLE bill_items (
   total_cost REAL NOT NULL
 );
 
--- 5. Seed Initial Products (Optional)
+-- 5. Seed Initial Categories
+INSERT INTO categories (id, name) VALUES
+('c1', 'Dairy'),
+('c2', 'Bakery Items'),
+('c3', 'Grains'),
+('c4', 'Beverages'),
+('c5', 'Fruits'),
+('c6', 'Vegetables'),
+('c7', 'Ice Creams'),
+('c8', 'Cakes'),
+('c9', 'Shakes');
+
+-- 6. Seed Initial Products (Optional)
 INSERT INTO products (id, name, unit_price, category) VALUES
 ('p1', 'Milk (1L)', 60, 'Dairy'),
-('p2', 'Bread (400g)', 45, 'Bakery'),
+('p2', 'Bread (400g)', 45, 'Bakery Items'),
 ('p3', 'Eggs (12pcs)', 90, 'Dairy'),
 ('p4', 'Rice (1kg)', 80, 'Grains'),
 ('p5', 'Sugar (1kg)', 50, 'Grains'),
@@ -53,4 +70,14 @@ INSERT INTO products (id, name, unit_price, category) VALUES
 ('p7', 'Coffee (100g)', 250, 'Beverages'),
 ('p8', 'Apple (1kg)', 180, 'Fruits'),
 ('p9', 'Banana (1 doz)', 60, 'Fruits'),
-('p10', 'Tomato (1kg)', 40, 'Vegetables');
+('p10', 'Tomato (1kg)', 40, 'Vegetables'),
+('p11', 'Vanilla Ice Cream (500ml)', 150, 'Ice Creams'),
+('p12', 'Chocolate Cake (500g)', 450, 'Cakes'),
+('p13', 'Strawberry Shake', 120, 'Shakes'),
+('p14', 'Potato (1kg)', 30, 'Vegetables'),
+('p15', 'Onion (1kg)', 35, 'Vegetables'),
+('p16', 'Butter (200g)', 110, 'Dairy'),
+('p17', 'Cheese Slices (10pcs)', 160, 'Dairy'),
+('p18', 'Orange Juice (1L)', 95, 'Beverages'),
+('p19', 'Mango (1kg)', 120, 'Fruits'),
+('p20', 'Cookies (200g)', 65, 'Bakery Items');
