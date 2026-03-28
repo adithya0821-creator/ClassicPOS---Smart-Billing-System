@@ -505,7 +505,10 @@ export default function App() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (loginForm.username === 'admin' && loginForm.password === 'admin123') {
+    if (
+      (loginForm.username === 'admin' && loginForm.password === 'admin123') ||
+      (loginForm.username === 'pos user' && loginForm.password === '123')
+    ) {
       setIsAuthenticated(true);
       localStorage.setItem('pos_auth', 'true');
       setLoginError('');
